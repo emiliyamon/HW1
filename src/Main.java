@@ -63,5 +63,3 @@ public class Main {
         return success;
     }
 }
-
-// we are the best (from last)
