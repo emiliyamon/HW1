@@ -1,6 +1,8 @@
 import java.util.Arrays;
 
 public class Board {
+    int rows;
+    int column;
 
     @Override
     public boolean equals(Object other) {

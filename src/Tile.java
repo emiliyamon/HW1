@@ -1,4 +1,9 @@
 public class Tile {
+    final char value; // check later
+
+    Tile(char id) {
+        this.value = id;
+    }
 
     @Override
     public boolean equals(Object other) {
