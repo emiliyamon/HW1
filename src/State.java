@@ -1,5 +1,11 @@
 public class State {
+    Board board;
 
+    //public boolean isGoal () {}
+    public State (Action action){
+        State newState = //appliying the action to the state (board)
+        return newState;
+    }
     @Override
     public boolean equals(Object other) {
         if (!(other instanceof State)) {
