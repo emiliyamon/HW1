@@ -2,11 +2,13 @@ import java.util.Arrays;
 
 public class Board {
     int rows;
-    int columns;
-    char tile;
+    int cols;
+    Tile[][] tiles;
 
-    Board(String tiles) {
-
+    public Board(int rows, int cols, Tile[][] tiles) {
+        this.rows = rows;
+        this.cols = cols;
+        tiles = new Tile[rows][cols];
     }
 
     @Override

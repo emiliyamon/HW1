@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="17052023 1014 made changes to enum">
+    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="17052023 1158">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
     </list>
@@ -91,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684307706014</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="17052023 1158">
+      <created>1684313998991</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684313998991</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +119,7 @@
     <MESSAGE value="1512" />
     <MESSAGE value="16052023 2241 added enum and updated tiles" />
     <MESSAGE value="17052023 1014 made changes to enum" />
-    <option name="LAST_COMMIT_MESSAGE" value="17052023 1014 made changes to enum" />
+    <MESSAGE value="17052023 1158" />
+    <option name="LAST_COMMIT_MESSAGE" value="17052023 1158" />
   </component>
 </project>
