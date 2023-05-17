@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="1512">
-      <change afterPath="$PROJECT_DIR$/src/EnumDirection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HW1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
-    </list>
+    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="16052023 2241 added enum and updated tiles" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684066378267</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="16052023 2241 added enum and updated tiles">
+      <created>1684266111780</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684266111780</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,6 +99,7 @@
     <MESSAGE value="goodluck to us - test change" />
     <MESSAGE value="1504" />
     <MESSAGE value="1512" />
-    <option name="LAST_COMMIT_MESSAGE" value="1512" />
+    <MESSAGE value="16052023 2241 added enum and updated tiles" />
+    <option name="LAST_COMMIT_MESSAGE" value="16052023 2241 added enum and updated tiles" />
   </component>
 </project>
