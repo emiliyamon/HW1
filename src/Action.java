@@ -8,10 +8,11 @@ public class Action {
     }
 
     public String toString () {
-        String move = "Move ";
-        String tileString = String.valueOf(tile);
-        String directionString = String.valueOf(direction);
+        //String move = "Move ";
+        //String tileString = String.valueOf(tile);
+        //String directionString = String.valueOf(direction);
 
-        return move + " " + tileString + " " + directionString;
+        //return move + " " + tileString + " " + directionString;
+        return "move" + " " + tile + " " + direction;
     }
 }
