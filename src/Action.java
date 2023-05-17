@@ -11,8 +11,7 @@ public class Action {
         String move = "Move ";
         String tileString = String.valueOf(tile);
         String directionString = String.valueOf(direction);
-        String returnString = move + " " + tileString + " " + directionString;
 
-        return returnString;
+        return move + " " + tileString + " " + directionString;
     }
 }
