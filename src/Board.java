@@ -2,7 +2,12 @@ import java.util.Arrays;
 
 public class Board {
     int rows;
-    int column;
+    int columns;
+    char tile;
+
+    Board(String tiles) {
+
+    }
 
     @Override
     public boolean equals(Object other) {
