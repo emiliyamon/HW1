@@ -19,6 +19,8 @@ public class Search {
      * @return The root node used to search for a solution
      */
     private Node getRoot(String boardString) {
+        //make boardString into board (mat)
+
         nodeInitialBoard = boardString;
         return nodeInitialboard;
 

@@ -1,21 +1,21 @@
 public class Node {
-    State State; //Nodes current state
-    Node Parent; //Nodes amazing father
-    Action Action; //The action that was made to get this state
+    State nodeState; //Nodes current state
+    Node nodeParent; //Nodes amazing father
+    Action preAction; //The action that was made to get this state
 
-    //public int heuristicValue() {
-        //return
-    //}
+    public int heuristicValue() {
+        return heuristicValueState;
+    }
 
     public Action getAction() {
-        return Action;
+        return preAction;
     }
 
     public Node getParent() {
-        return Parent;
+        return nodeParent;
     }
 
     public State getState() {
-        return State;
+        return nodeState;
     }
 }

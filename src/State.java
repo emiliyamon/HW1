@@ -1,9 +1,20 @@
 public class State {
     Board board;
 
-    //public boolean isGoal () {}
+    public boolean isGoal() {
+        int h = heuristicValue();
+        if (h == 0) {
+            return true;
+        }
+
+    }
+    public Action[] actions() {
+        //move the tile UP/DOWN/RIGHT/LEFT (that order) according to the actual options from this state
+        return EnumDirections;
+
+    }
     public State (Action action){
-        State newState = //appliying the action to the state (board)
+        State newState = Action. //appliying the action to the state (board)
         return newState;
     }
     @Override
