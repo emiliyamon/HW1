@@ -5,6 +5,10 @@ public class Tile {
         this.value = id;
     }
 
+    public static Tile fromChar(char value) {
+        return new Tile(value);
+    }
+
     @Override
     public boolean equals(Object other) {
         if (!(other instanceof Tile)) {

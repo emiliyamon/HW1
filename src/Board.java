@@ -18,13 +18,15 @@ public class Board {
     public Board(String boardString) {
         String[] boardRowList;
         String[] rowTileList;
+        char charTile;
         int i = 0;
         boardRowList = boardString.split("|"); // splits the board into string rows in a list
 
         for (String tilesRow : boardRowList) {
             rowTileList = tilesRow.split(" "); // splits the rows into string tiles in a list
-            for (int j; j < rowTileList.length; j++) {
-                tiles[i][j] = (Tile)rowTileList[j];
+            for (int j = 0; j < rowTileList.length; j++) {
+                charTile = rowTileList[j].charAt(0);
+                tiles[i][j] = Tile.fromChar(charTile);
             }
 
         }

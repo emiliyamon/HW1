@@ -14,7 +14,7 @@ public class State {
 
     }
     public State (Action action){
-        State newState = Action. //appliying the action to the state (board)
+        State newState = Action; //applying the action to the state (board)
         return newState;
     }
     @Override
