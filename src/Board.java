@@ -1,15 +1,35 @@
 import java.util.Arrays;
 
 public class Board {
-    int rows;
-    int cols;
+
+    String boardString;
     Tile[][] tiles;
 
-    public Board(int rows, int cols, Tile[][] tiles) {
-        this.rows = rows;
-        this.cols = cols;
-        tiles = new Tile[rows][cols];
+
+    public void setBoardString() {
+        this.boardString = boardString;
     }
+
+    public String getBoardString(String boardString) {
+        return this.boardString;
+    }
+
+
+    public Board(String boardString) {
+        String[] boardRowList;
+        String[] rowTileList;
+        int i = 0;
+        boardRowList = boardString.split("|"); // splits the board into string rows in a list
+
+        for (String tilesRow : boardRowList) {
+            rowTileList = tilesRow.split(" "); // splits the rows into string tiles in a list
+            for (int j; j < rowTileList.length; j++) {
+                tiles[i][j] = (Tile)rowTileList[j];
+            }
+
+        }
+    }
+
 
     @Override
     public boolean equals(Object other) {
