@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="red lines no more">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/State.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684326520247</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="red lines no more">
+      <created>1684409429154</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684409429154</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +153,7 @@
     <MESSAGE value="17052023 1325" />
     <MESSAGE value="AD MATAY" />
     <MESSAGE value="AD MATA" />
-    <option name="LAST_COMMIT_MESSAGE" value="AD MATA" />
+    <MESSAGE value="red lines no more" />
+    <option name="LAST_COMMIT_MESSAGE" value="red lines no more" />
   </component>
 </project>
