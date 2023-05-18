@@ -31,8 +31,8 @@ public class Main {
      * @return true if a solution was found and false otherwise
      */
     private static boolean searchOnce(String boardString) {
-        Search search = new Search();
-        Thread t = new Thread(() -> search.search(boardString));
+        Search search = new Search(); // delete later: creates new search objects from Search class
+        Thread t = new Thread(() -> search.search(boardString)); // delete later: this line of code creates a new thread that will execute the search.search(boardString) method in a separate thread of execution.
         t.start();  // Start searching for a solution
         try {
             t.join(60000);  // Wait for (at most) 60 seconds
