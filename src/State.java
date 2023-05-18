@@ -1,22 +1,37 @@
 public class State {
-    Board board;
+    static Board board;
+    static int value; // check later how to turn to HeuristicValue class object
+
+
+    State (Board board, int value) {
+        this.board = board;
+        this.value = value;
+    }
 
     public boolean isGoal() {
-        int h = heuristicValue();
-        if (h == 0) {
+        if (State.value == 0) {
             return true;
+        } else {
+            return false;
         }
+    }
+
+
+    public int[] findIndex(Board board) {
 
     }
+
     public Action[] actions() {
-        //move the tile UP/DOWN/RIGHT/LEFT (that order) according to the actual options from this state
-        return EnumDirections;
 
     }
-    public State (Action action){
+
+
+    public State (Action action) {
         State newState = Action; //applying the action to the state (board)
         return newState;
     }
+
+
     @Override
     public boolean equals(Object other) {
         if (!(other instanceof State)) {
