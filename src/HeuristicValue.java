@@ -5,7 +5,7 @@ public class HeuristicValue {
         this.value = 0;
     }
 
-    public static void setValue(int value) {
+    public void setValue(int value) {
         this.value = value;
     }
 }

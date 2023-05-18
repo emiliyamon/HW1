@@ -16,6 +16,7 @@ public class Board {
 
 
     public Board(String boardString) {
+        this.boardString = boardString;
         String[] boardRowList;
         String[] rowTileList;
         char charTile;
@@ -28,7 +29,6 @@ public class Board {
                 charTile = rowTileList[j].charAt(0);
                 tiles[i][j] = Tile.fromChar(charTile);
             }
-
         }
     }
 

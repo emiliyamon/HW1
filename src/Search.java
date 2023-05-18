@@ -21,7 +21,7 @@ public class Search {
     private Node getRoot(String boardString) {
         //make boardString into board (mat)
 
-        nodeInitialBoard = boardString;
+        Node nodeInitialBoard = (Node)boardString;
         return nodeInitialboard;
 
         // TODO: Implement this function.
