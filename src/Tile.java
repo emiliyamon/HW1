@@ -1,14 +1,17 @@
 public class Tile {
-    final char value; // check later
+    final char value;
 
-    Tile(char id) {
-        this.value = id;
+    Tile(char value) {
+        this.value = value;
     }
 
     public static Tile fromChar(char value) {
         return new Tile(value);
     }
 
+    public boolean isSpace() { // check later if function needs parameters
+        return (value == '_');
+    }
 
     // don't touch!!
 

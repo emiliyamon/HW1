@@ -17,19 +17,21 @@ public class State {
     }
 
 
-    public int[] findIndex(Board board) {
-
-    }
-
     public Action[] actions() {
+        boolean[] possibleActions = board.checkMoves(board);
+        //  up, down, right, left
+
+        if (possibleActions[0] && possibleActions[1] && possibleActions[2] && possibleActions[3]) {
+            EnumDirections[] actions = {EnumDirections.UP, EnumDirections.DOWN ,EnumDirections.RIGHT ,EnumDirections.LEFT};
+        }
 
     }
 
 
-    public State (Action action) {
-        State newState = Action; //applying the action to the state (board)
-        return newState;
-    }
+//    public State (Action action) {
+//        State newState = Action; //applying the action to the state (board)
+//        return newState;
+//    }
 
     // don't touch!!
 
