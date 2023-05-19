@@ -1,22 +1,16 @@
 public class Node {
-    State nodeState; //Nodes current state
-    Node nodeParent; //Nodes amazing father - not sure you can do that
-    Action preAction; //The action that was made to get this state
+    State state; // current state
+    Node parent; // previous node
+    Action preAction; // the action that was made to get to current state
+    HeuristicValue heuristic;
 
-    public int heuristicValue() {
-        return heuristicValueState;
+
+    Node(State state, Node parent, Action preAction, HeuristicValue heuristic) {
+        this.state = state;
+        this.parent = parent;
+        this.preAction = preAction;
+        this.heuristic = heuristic;
     }
 
 
-    public Action getAction() {
-        return preAction;
-    }
-
-    public Node getParent() {
-        return nodeParent;
-    }
-
-    public State getState() {
-        return nodeState;
-    }
 }

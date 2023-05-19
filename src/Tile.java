@@ -9,6 +9,9 @@ public class Tile {
         return new Tile(value);
     }
 
+
+    // don't touch!!
+
     @Override
     public boolean equals(Object other) {
         if (!(other instanceof Tile)) {

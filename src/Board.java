@@ -33,6 +33,8 @@ public class Board {
     }
 
 
+    // don't touch!!
+
     @Override
     public boolean equals(Object other) {
         if (!(other instanceof Board)) {

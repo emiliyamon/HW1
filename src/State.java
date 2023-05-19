@@ -1,15 +1,15 @@
 public class State {
     static Board board;
-    static int value; // check later how to turn to HeuristicValue class object
+    static HeuristicValue heuristic;
 
 
-    State (Board board, int value) {
+    State (Board board, HeuristicValue heuristic) {
         this.board = board;
-        this.value = value;
+        this.heuristic = heuristic;
     }
 
     public boolean isGoal() {
-        if (State.value == 0) {
+        if (heuristic.isZero()) {
             return true;
         } else {
             return false;
@@ -31,6 +31,7 @@ public class State {
         return newState;
     }
 
+    // don't touch!!
 
     @Override
     public boolean equals(Object other) {
