@@ -1,6 +1,6 @@
 public class State {
     static Board board;
-    static HeuristicValue heuristic;
+    static HeuristicValue heuristic; // check later
 
 
     State (Board board, HeuristicValue heuristic) {
@@ -67,19 +67,19 @@ public class State {
         switch (action.direction) {
             case UP:
                 newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex - 1][colIndex];
-                newBoard.tiles[rowIndex - 1][colIndex] = new Tile(' ');
+                newBoard.tiles[rowIndex - 1][colIndex] = new Tile('_');
                 break;
             case DOWN:
                 newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex + 1][colIndex];
-                newBoard.tiles[rowIndex + 1][colIndex] = new Tile(' ');
+                newBoard.tiles[rowIndex + 1][colIndex] = new Tile('_');
                 break;
             case RIGHT:
                 newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex][colIndex - 1];
-                newBoard.tiles[rowIndex][colIndex - 1] = new Tile(' ');
+                newBoard.tiles[rowIndex][colIndex - 1] = new Tile('_');
                 break;
             case LEFT:
                 newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex][colIndex + 1];
-                newBoard.tiles[rowIndex][colIndex + 1] = new Tile(' ');
+                newBoard.tiles[rowIndex][colIndex + 1] = new Tile('_');
                 break;
         }
         return new State(newBoard, new HeuristicValue(0));

@@ -1,7 +1,7 @@
 public class Tile {
     final char value;
 
-    Tile(char value) {
+    Tile(char value) { // change to int
         this.value = value;
     }
 

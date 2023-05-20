@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public class Board {
-
     String boardString;
     Tile[][] tiles;
 
@@ -11,11 +10,10 @@ public class Board {
         String[] boardRowList;
         String[] rowTileList;
         char charTile;
-        int i = 0;
         boardRowList = boardString.split("|"); // splits the board into string rows in a list
 
-        for (String tilesRow : boardRowList) {
-            rowTileList = tilesRow.split(" "); // splits the rows into string tiles in a list
+        for (int i = 0; i < boardRowList.length; i++) {
+            rowTileList = boardRowList[i].split(" "); // splits the rows into string tiles in a list
             for (int j = 0; j < rowTileList.length; j++) {
                 charTile = rowTileList[j].charAt(0);
                 tiles[i][j] = Tile.fromChar(charTile);
@@ -64,7 +62,7 @@ public class Board {
 
         int[][] movableTiles = new int[4][2];
 
-        boolean up = (rowIndex == maxRow); // false if there's no tile below space
+        boolean up = !(rowIndex == maxRow); // false if there's no tile below space
         if (up) {
             movableTiles[0][0] = board.tiles[rowIndex + 1][colIndex].value;
             movableTiles[0][1] = 1;
@@ -73,7 +71,7 @@ public class Board {
             movableTiles[0][1] = 0;
         }
 
-        boolean down = (rowIndex == firstRow); // false if there's no tile above space
+        boolean down = !(rowIndex == firstRow); // false if there's no tile above space
         if (down) {
             movableTiles[1][0] = board.tiles[rowIndex - 1][colIndex].value;
             movableTiles[1][1] = 1;
@@ -82,7 +80,7 @@ public class Board {
             movableTiles[1][1] = 0;
         }
 
-        boolean right = (colIndex == firstCol); // false if there's no tile to the left of space
+        boolean right = !(colIndex == firstCol); // false if there's no tile to the left of space
         if (right) {
             movableTiles[2][0] = board.tiles[rowIndex][colIndex + 1].value;
             movableTiles[2][1] = 1;
@@ -91,7 +89,7 @@ public class Board {
             movableTiles[2][1] = 0;
         }
 
-        boolean left = (colIndex == maxCol); // false if there's no tile to the right of space
+        boolean left = !(colIndex == maxCol); // false if there's no tile to the right of space
         if (left) {
             movableTiles[3][0] = board.tiles[rowIndex][colIndex - 1].value;
             movableTiles[3][1] = 1;

@@ -1,13 +1,13 @@
 public class Node {
     State state; // current state
     Node parent; // previous node
-    Action action; // the action that was made to get to current state
+    Action preAction; // the action that was made to get to current state
 
 
     public Node(State state, Node parent, Action action) {
         this.state = state;
         this.parent = parent;
-        this.action = action;
+        this.preAction = preAction;
     }
 
     public State getState() {
@@ -19,7 +19,7 @@ public class Node {
     }
 
     public Action getAction() {
-        return action;
+        return preAction;
     }
 
 
@@ -28,9 +28,10 @@ public class Node {
         Node[] children = new Node[possibleActions.length];
         int i = 0;
         for (Action action : possibleActions) {
-            children[i].action = action;
+            children[i].preAction = action;
             children[i].state = state.result(action);
             children[i].parent = this; // check later
+            i++;
         }
         return children;
     }
@@ -62,6 +63,4 @@ public class Node {
         }
         return distance;
     }
-
-
 }
