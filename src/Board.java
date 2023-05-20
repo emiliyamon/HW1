@@ -24,15 +24,6 @@ public class Board {
     }
 
 
-    public void setBoardString() {
-        this.boardString = boardString;
-    }
-
-    public String getBoardString(String boardString) {
-        return this.boardString;
-    }
-
-
     public String findSpace(Board board) {
         for (int i = 0; i < board.tiles.length; i++) {
             for (int j = 0; j < board.tiles[0]. length; j++) {
@@ -45,7 +36,7 @@ public class Board {
     }
 
 
-    public boolean[] checkMoves(Board board) {
+    public int[][] checkMoves(Board board) {
         // get index of space
         String[] indexString = board.findSpace(board).split(" ");
         int[] indexInt = new int[indexString.length];
@@ -54,23 +45,53 @@ public class Board {
             indexInt[i] = Integer.parseInt(indexString[i]);
         }
 
+        int rowIndex = indexInt[0];
+        int colIndex = indexInt[1];
         int firstRow = 0;
         int maxRow = board.tiles.length - 1;
         int firstCol = 0;
         int maxCol = board.tiles[0].length - 1;
 
-        boolean noAbove = (indexInt[0] == firstRow);
-        boolean noBelow = (indexInt[0] == maxRow);
-        boolean noLeft = (indexInt[1] == firstCol);
-        boolean noRight = (indexInt[1] == maxCol);
 
-        boolean up = noBelow;
-        boolean down = noAbove;
-        boolean right = noLeft;
-        boolean left = noRight;
+        int[][] movableTiles = new int[4][2];
 
-        boolean[] possibleActions = {up, down, right, left};
-        return possibleActions;
+        boolean up = (rowIndex == maxRow); // false if there's no tile below space
+        if (up) {
+            movableTiles[0][0] = board.tiles[rowIndex + 1][colIndex].value;
+            movableTiles[0][1] = 1;
+        } else {
+            movableTiles[0][0] = 0;
+            movableTiles[0][1] = 0;
+        }
+
+        boolean down = (rowIndex == firstRow); // false if there's no tile above space
+        if (up) {
+            movableTiles[1][0] = board.tiles[rowIndex - 1][colIndex].value;
+            movableTiles[1][1] = 1;
+        } else {
+            movableTiles[1][0] = 0;
+            movableTiles[1][1] = 0;
+        }
+
+        boolean right = (colIndex == firstCol); // false if there's no tile to the left of space
+        if (up) {
+            movableTiles[2][0] = board.tiles[rowIndex][colIndex + 1].value;
+            movableTiles[2][1] = 1;
+        } else {
+            movableTiles[2][0] = 0;
+            movableTiles[2][1] = 0;
+        }
+
+        boolean left = (colIndex == maxCol); // false if there's no tile to the right of space
+        if (up) {
+            movableTiles[3][0] = board.tiles[rowIndex][colIndex - 1].value;
+            movableTiles[3][1] = 1;
+        } else {
+            movableTiles[3][0] = 0;
+            movableTiles[3][1] = 0;
+        }
+        
+        return movableTiles;
     }
 
 
