@@ -23,6 +23,18 @@ public class Node {
     }
 
 
+    public Node[] expand() {
+        Action[] possibleActions = state.actions();
+        Node[] children = new Node[possibleActions.length];
+        int i = 0;
+        for (Action action : possibleActions) {
+            children[i].action = action;
+            children[i].state = state.result(action);
+            children[i].parent = this; // check later
+        }
+        return children;
+    }
+
     public int heuristicValue() {
         Board board = this.state.board;
         int numRows = board.tiles.length;
