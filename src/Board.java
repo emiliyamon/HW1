@@ -23,6 +23,15 @@ public class Board {
         }
     }
 
+    public Board(Board originalBoard) {
+        this.tiles = new Tile[originalBoard.tiles.length][originalBoard.tiles[0].length];
+        for (int i = 0; i < originalBoard.tiles.length; i++) {
+            for (int j = 0; j < originalBoard.tiles[i].length; j++) {
+                this.tiles[i][j] = originalBoard.tiles[i][j];
+            }
+        }
+    }
+
 
     public String findSpace(Board board) {
         for (int i = 0; i < board.tiles.length; i++) {
@@ -40,7 +49,6 @@ public class Board {
         // get index of space
         String[] indexString = board.findSpace(board).split(" ");
         int[] indexInt = new int[indexString.length];
-
         for (int i = 0; i < indexString.length; i++) {
             indexInt[i] = Integer.parseInt(indexString[i]);
         }
@@ -65,7 +73,7 @@ public class Board {
         }
 
         boolean down = (rowIndex == firstRow); // false if there's no tile above space
-        if (up) {
+        if (down) {
             movableTiles[1][0] = board.tiles[rowIndex - 1][colIndex].value;
             movableTiles[1][1] = 1;
         } else {
@@ -74,7 +82,7 @@ public class Board {
         }
 
         boolean right = (colIndex == firstCol); // false if there's no tile to the left of space
-        if (up) {
+        if (right) {
             movableTiles[2][0] = board.tiles[rowIndex][colIndex + 1].value;
             movableTiles[2][1] = 1;
         } else {
@@ -83,7 +91,7 @@ public class Board {
         }
 
         boolean left = (colIndex == maxCol); // false if there's no tile to the right of space
-        if (up) {
+        if (left) {
             movableTiles[3][0] = board.tiles[rowIndex][colIndex - 1].value;
             movableTiles[3][1] = 1;
         } else {

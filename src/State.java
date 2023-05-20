@@ -51,10 +51,39 @@ public class State {
     }
 
 
-//    public State (Action action) {
-//        State newState = Action; //applying the action to the state (board)
-//        return newState;
-//    }
+    public State result(Action action) {
+        Board newBoard = new Board(board);
+        newBoard.findSpace(newBoard);
+
+        // get index of space
+        String[] indexString = newBoard.findSpace(newBoard).split(" ");
+        int[] indexInt = new int[indexString.length];
+        for (int i = 0; i < indexString.length; i++) {
+            indexInt[i] = Integer.parseInt(indexString[i]);
+        }
+        int rowIndex = indexInt[0];
+        int colIndex = indexInt[1];
+
+        switch (action.direction) {
+            case UP:
+                newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex - 1][colIndex];
+                newBoard.tiles[rowIndex - 1][colIndex] = new Tile(' ');
+                break;
+            case DOWN:
+                newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex + 1][colIndex];
+                newBoard.tiles[rowIndex + 1][colIndex] = new Tile(' ');
+                break;
+            case RIGHT:
+                newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex][colIndex - 1];
+                newBoard.tiles[rowIndex][colIndex - 1] = new Tile(' ');
+                break;
+            case LEFT:
+                newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex][colIndex + 1];
+                newBoard.tiles[rowIndex][colIndex + 1] = new Tile(' ');
+                break;
+        }
+        return new State(newBoard, new HeuristicValue(0));
+    }
 
     // don't touch!!
 
