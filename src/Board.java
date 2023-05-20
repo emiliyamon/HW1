@@ -23,6 +23,7 @@ public class Board {
         }
     }
 
+
     public Board(Board originalBoard) {
         this.tiles = new Tile[originalBoard.tiles.length][originalBoard.tiles[0].length];
         for (int i = 0; i < originalBoard.tiles.length; i++) {
