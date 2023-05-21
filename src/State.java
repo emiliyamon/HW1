@@ -1,14 +1,13 @@
 public class State {
     static Board board;
-    static HeuristicValue heuristic; // check later
 
 
-    State (Board board, HeuristicValue heuristic) {
+    State (Board board) {
         this.board = board;
-        this.heuristic = heuristic;
     }
 
     public boolean isGoal() {
+        HeuristicValue heuristic = new HeuristicValue(board);
         if (heuristic.isZero()) {
             return true;
         } else {
@@ -82,7 +81,7 @@ public class State {
                 newBoard.tiles[rowIndex][colIndex + 1] = new Tile('_');
                 break;
         }
-        return new State(newBoard, new HeuristicValue(0));
+        return new State(newBoard);
     }
 
     // don't touch!!
