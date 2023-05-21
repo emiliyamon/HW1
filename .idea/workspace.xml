@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="21052023 1839">
+    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="21052023 1848 98 problems but null in action aint one">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/State.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684683603511</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="21052023 1848 98 problems but null in action aint one">
+      <created>1684684128358</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1684684128358</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -260,7 +268,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1512" />
     <MESSAGE value="16052023 2241 added enum and updated tiles" />
     <MESSAGE value="17052023 1014 made changes to enum" />
     <MESSAGE value="17052023 1158" />
@@ -285,6 +292,7 @@
     <MESSAGE value="21052023 1820 99 mistakes but out of bounds aint one" />
     <MESSAGE value="21052023 1836" />
     <MESSAGE value="21052023 1839" />
-    <option name="LAST_COMMIT_MESSAGE" value="21052023 1839" />
+    <MESSAGE value="21052023 1848 98 problems but null in action aint one" />
+    <option name="LAST_COMMIT_MESSAGE" value="21052023 1848 98 problems but null in action aint one" />
   </component>
 </project>

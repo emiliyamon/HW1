@@ -1,13 +1,17 @@
 public class Tile {
     final int value;
 
-    public Tile(int value) { // change to int
+    public Tile(int value) {
         this.value = value;
     }
 
 
-    public boolean isSpace() { // check later if function needs parameters
-        return (value == -1);
+    public boolean isSpace() {
+        if (value == -1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // don't touch!!
