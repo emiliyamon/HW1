@@ -35,7 +35,7 @@ public class Board {
 
     public String findSpace(Board board) {
         for (int i = 0; i < board.tiles.length; i++) {
-            for (int j = 0; j < board.tiles[0]. length; j++) {
+            for (int j = 0; j < board.tiles[0].length; j++) {
                 if (board.tiles[i][j].isSpace()) {
                     return i + " " + j;
                 }
