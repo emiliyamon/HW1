@@ -5,12 +5,9 @@ public class Tile {
         this.value = value;
     }
 
-    public static Tile fromChar(char value) {
-        return new Tile(value);
-    }
 
     public boolean isSpace() { // check later if function needs parameters
-        return (value == 0);
+        return (value == -1);
     }
 
     // don't touch!!
