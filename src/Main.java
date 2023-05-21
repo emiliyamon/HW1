@@ -21,7 +21,7 @@ public class Main {
                 successCounter++;
             }
         }
-        System.out.println("Able to solve " + successCounter + " ot of " + boards.length + " boards.");
+        System.out.println("Able to solve " + successCounter + " out of " + boards.length + " boards.");
     }
 
     /**
@@ -41,7 +41,7 @@ public class Main {
         boolean success = false;
         if (t.isAlive()) {  // The search is not over
             t.stop();
-            System.out.println("Timout occurred...");
+            System.out.println("Timeout occurred...");
         } else {  // The search is over
             Search.Status searchStatus = search.getStatus();
             switch (searchStatus) {
