@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="21052023 1951 97 problems but mistake in Board aint one">
+    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="21052023 2001 97 problems but mistake in Board aint one">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/State.java" afterDir="false" />
     </list>
@@ -266,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684687941446</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="21052023 2001 97 problems but mistake in Board aint one">
+      <created>1684688495559</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1684688495559</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,7 +288,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="17052023 1014 made changes to enum" />
     <MESSAGE value="17052023 1158" />
     <MESSAGE value="17052023 1226" />
     <MESSAGE value="17052023 1325" />
@@ -306,6 +312,7 @@
     <MESSAGE value="21052023 1839" />
     <MESSAGE value="21052023 1848 98 problems but null in action aint one" />
     <MESSAGE value="21052023 1951 97 problems but mistake in Board aint one" />
-    <option name="LAST_COMMIT_MESSAGE" value="21052023 1951 97 problems but mistake in Board aint one" />
+    <MESSAGE value="21052023 2001 97 problems but mistake in Board aint one" />
+    <option name="LAST_COMMIT_MESSAGE" value="21052023 2001 97 problems but mistake in Board aint one" />
   </component>
 </project>

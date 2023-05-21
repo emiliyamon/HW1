@@ -1,5 +1,5 @@
 public class State {
-    static Board board;
+    Board board;
 
 
     public State (Board board) {
@@ -21,7 +21,7 @@ public class State {
         //  (tile,up), (tile,down), (tile,right), (tile,left)
         int arrayLen = 0;
         for (int i = 0; i < possibleActions.length; i++) {
-            arrayLen = arrayLen + possibleActions[i][1];
+            arrayLen += possibleActions[i][1];
         }
         Action[] actions = new Action[arrayLen];
 
@@ -32,19 +32,19 @@ public class State {
 
         int i = 0;
         if (up != 0) {
-            actions[i] = new Action(EnumDirections.UP, new Tile((char)possibleActions[0][0]));
+            actions[i] = new Action(EnumDirections.UP, new Tile(possibleActions[0][0]));
             i++;
         }
         if (down != 0) {
-            actions[i] = new Action(EnumDirections.DOWN, new Tile((char)possibleActions[1][0]));
+            actions[i] = new Action(EnumDirections.DOWN, new Tile(possibleActions[1][0]));
             i++;
         }
         if (right != 0) {
-            actions[i] = new Action(EnumDirections.RIGHT, new Tile((char)possibleActions[2][0]));
+            actions[i] = new Action(EnumDirections.RIGHT, new Tile(possibleActions[2][0]));
             i++;
         }
         if (left != 0) {
-            actions[i] = new Action(EnumDirections.LEFT, new Tile((char)possibleActions[3][0]));
+            actions[i] = new Action(EnumDirections.LEFT, new Tile(possibleActions[3][0]));
         }
         return actions;
     }
@@ -52,33 +52,34 @@ public class State {
 
     public State result(Action action) {
         Board newBoard = new Board(board.boardString);
-        newBoard.findSpace(newBoard);
+        int rowIndex = -1;
+        int colIndex = -1;
 
-        // get index of space
-        String[] indexString = newBoard.findSpace(newBoard).split(" ");
-        int[] indexInt = new int[indexString.length];
-        for (int i = 0; i < indexString.length; i++) {
-            indexInt[i] = Integer.parseInt(indexString[i]);
+        for (int i = 0; i < newBoard.tiles.length; i++) {
+            for (int j = 0; j < newBoard.tiles[0].length; j++) {
+                if (newBoard.tiles[i][j].value == action.tile.value) {
+                    rowIndex = i;
+                    colIndex = j;
+                }
+            }
         }
-        int rowIndex = indexInt[0];
-        int colIndex = indexInt[1];
 
         switch (action.direction) {
             case UP:
-                newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex + 1][colIndex];
-                newBoard.tiles[rowIndex + 1][colIndex] = new Tile(-1);
-                break;
-            case DOWN:
                 newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex - 1][colIndex];
                 newBoard.tiles[rowIndex - 1][colIndex] = new Tile(-1);
                 break;
-            case RIGHT:
-                newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex][colIndex - 1];
-                newBoard.tiles[rowIndex][colIndex - 1] = new Tile(-1);
+            case DOWN:
+                newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex + 1][colIndex];
+                newBoard.tiles[rowIndex + 1][colIndex] = new Tile(-1);
                 break;
-            case LEFT:
+            case RIGHT:
                 newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex][colIndex + 1];
                 newBoard.tiles[rowIndex][colIndex + 1] = new Tile(-1);
+                break;
+            case LEFT:
+                newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex][colIndex - 1];
+                newBoard.tiles[rowIndex][colIndex - 1] = new Tile(-1);
                 break;
         }
         return new State(newBoard);
