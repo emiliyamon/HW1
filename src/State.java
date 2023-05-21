@@ -7,12 +7,22 @@ public class State {
     }
 
     public boolean isGoal() {
-        HeuristicValue heuristic = new HeuristicValue(board);
-        if (heuristic.isZero()) {
-            return true;
-        } else {
-            return false;
+        Board goalBoard = new Board(board.boardString);
+        int value = 0;
+        for (int i = 0; i < goalBoard.tiles.length; i++) {
+            for (int j = 0; j < goalBoard.tiles[0].length; j++) {
+                goalBoard.tiles[i][j] = new Tile(value);
+                value++;
+            }
         }
+        for (int i = 0; i < goalBoard.tiles.length; i++) {
+            for (int j = 0; j < goalBoard.tiles[0].length; j++) {
+                if (goalBoard.tiles[i][j].value != board.tiles[i][j].value) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 
@@ -60,6 +70,7 @@ public class State {
                 if (newBoard.tiles[i][j].value == action.tile.value) {
                     rowIndex = i;
                     colIndex = j;
+                    break;
                 }
             }
         }
