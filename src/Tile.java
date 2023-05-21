@@ -1,7 +1,7 @@
 public class Tile {
     final int value;
 
-    Tile(int value) { // change to int
+    public Tile(int value) { // change to int
         this.value = value;
     }
 

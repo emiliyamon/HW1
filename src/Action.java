@@ -2,7 +2,7 @@ public class Action {
     EnumDirections direction;
     Tile tile;
 
-    Action(EnumDirections direction, Tile tile) {
+    public Action(EnumDirections direction, Tile tile) {
         this.direction = direction;
         this.tile = tile;
     }

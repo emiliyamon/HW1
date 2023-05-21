@@ -2,7 +2,7 @@ public class HeuristicValue {
     Board board;
     int heuristic;
 
-    HeuristicValue(Board board) {
+    public HeuristicValue(Board board) {
         this.board = board;
         int numRows = board.tiles.length;
         int numCols = board.tiles[0].length;

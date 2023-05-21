@@ -2,7 +2,7 @@ public class State {
     static Board board;
 
 
-    State (Board board) {
+    public State (Board board) {
         this.board = board;
     }
 
