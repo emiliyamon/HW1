@@ -1,7 +1,7 @@
 public class Tile {
-    final char value;
+    final int value;
 
-    Tile(char value) { // change to int
+    Tile(int value) { // change to int
         this.value = value;
     }
 
@@ -10,7 +10,7 @@ public class Tile {
     }
 
     public boolean isSpace() { // check later if function needs parameters
-        return (value == '_');
+        return (value == 0);
     }
 
     // don't touch!!

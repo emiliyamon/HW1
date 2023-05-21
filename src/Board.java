@@ -9,14 +9,16 @@ public class Board {
         this.boardString = boardString;
         String[] boardRowList;
         String[] rowTileList;
-        char charTile;
         boardRowList = boardString.split("|"); // splits the board into string rows in a list
 
         for (int i = 0; i < boardRowList.length; i++) {
             rowTileList = boardRowList[i].split(" "); // splits the rows into string tiles in a list
             for (int j = 0; j < rowTileList.length; j++) {
-                charTile = rowTileList[j].charAt(0);
-                tiles[i][j] = Tile.fromChar(charTile);
+                if (rowTileList[j].equals("_")) {
+                    tiles[i][j] = new Tile(0);
+                } else {
+                    tiles[i][j] = new Tile(Integer.parseInt(rowTileList[j]));
+                }
             }
         }
     }

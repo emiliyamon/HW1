@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="20052023 2127 added method expand in Node class">
+    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="20052023 2254 updated in classes Board, Node, State. Tile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/State.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684607251568</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="20052023 2254 updated in classes Board, Node, State. Tile">
+      <created>1684612534891</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1684612534891</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,6 +248,7 @@
     <MESSAGE value="20052023 1319 added method result in State class" />
     <MESSAGE value="20052023 1908 added method heuristicValue in Node class&#10;also did something in Board but don't remember what" />
     <MESSAGE value="20052023 2127 added method expand in Node class" />
-    <option name="LAST_COMMIT_MESSAGE" value="20052023 2127 added method expand in Node class" />
+    <MESSAGE value="20052023 2254 updated in classes Board, Node, State. Tile" />
+    <option name="LAST_COMMIT_MESSAGE" value="20052023 2254 updated in classes Board, Node, State. Tile" />
   </component>
 </project>
