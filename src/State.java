@@ -65,12 +65,12 @@ public class State {
 
         switch (action.direction) {
             case UP:
-                newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex - 1][colIndex];
-                newBoard.tiles[rowIndex - 1][colIndex] = new Tile(-1);
-                break;
-            case DOWN:
                 newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex + 1][colIndex];
                 newBoard.tiles[rowIndex + 1][colIndex] = new Tile(-1);
+                break;
+            case DOWN:
+                newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex - 1][colIndex];
+                newBoard.tiles[rowIndex - 1][colIndex] = new Tile(-1);
                 break;
             case RIGHT:
                 newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex][colIndex - 1];
