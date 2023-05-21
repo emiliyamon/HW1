@@ -28,9 +28,10 @@ public class Node {
         Node[] children = new Node[possibleActions.length];
         int i = 0;
         for (Action action : possibleActions) {
-            children[i].preAction = new Action(preAction.direction, preAction.tile);
-            children[i].state = state.result(action);
-            children[i].parent = this; // check later
+            State newState = state.result(action);
+            Action newAction = new Action(preAction.direction, preAction.tile);
+            Node child = new Node(newState, this, newAction);
+            children[i] = child;
             i++;
         }
         return children;
