@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="21052023 1635 updated constructor in Board">
+    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="21052023 1745 99 mistake but out of bounds aint one">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684676135680</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="21052023 1745 99 mistake but out of bounds aint one">
+      <created>1684680315394</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1684680315394</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -256,6 +263,7 @@
     <MESSAGE value="20052023 2127 added method expand in Node class" />
     <MESSAGE value="21052023 1323 updates in classes Node, State and HeuristicValue" />
     <MESSAGE value="21052023 1635 updated constructor in Board" />
-    <option name="LAST_COMMIT_MESSAGE" value="21052023 1635 updated constructor in Board" />
+    <MESSAGE value="21052023 1745 99 mistake but out of bounds aint one" />
+    <option name="LAST_COMMIT_MESSAGE" value="21052023 1745 99 mistake but out of bounds aint one" />
   </component>
 </project>

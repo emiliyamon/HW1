@@ -4,10 +4,10 @@ public class Node {
     Action preAction; // the action that was made to get to current state
 
 
-    public Node(State state, Node parent, Action action) {
+    public Node(State state, Node parent, Action preAction) {
         this.state = state;
         this.parent = parent;
-        this.preAction = action;
+        this.preAction = preAction;
     }
 
     public State getState() {
@@ -28,7 +28,7 @@ public class Node {
         Node[] children = new Node[possibleActions.length];
         int i = 0;
         for (Action action : possibleActions) {
-            children[i].preAction = action;
+            children[i].preAction = new Action(preAction.direction, preAction.tile);
             children[i].state = state.result(action);
             children[i].parent = this; // check later
             i++;
