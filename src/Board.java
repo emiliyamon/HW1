@@ -83,7 +83,7 @@ public class Board {
 
         boolean right = !(colIndex == firstCol); // false if there's no tile to the left of space
         if (right) {
-            movableTiles[2][0] = board.tiles[rowIndex][colIndex + 1].value;
+            movableTiles[2][0] = board.tiles[rowIndex][colIndex - 1].value;
             movableTiles[2][1] = 1;
         } else {
             movableTiles[2][0] = 0;
@@ -92,7 +92,7 @@ public class Board {
 
         boolean left = !(colIndex == maxCol); // false if there's no tile to the right of space
         if (left) {
-            movableTiles[3][0] = board.tiles[rowIndex][colIndex - 1].value;
+            movableTiles[3][0] = board.tiles[rowIndex][colIndex + 1].value;
             movableTiles[3][1] = 1;
         } else {
             movableTiles[3][0] = 0;
