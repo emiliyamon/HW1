@@ -19,10 +19,7 @@ public class Search {
      * @return The root node used to search for a solution
      */
     private Node getRoot(String boardString) {
-        //make boardString into board (mat)
-
-        Node nodeInitialBoard = (Node)boardString;
-        return nodeInitialboard;
+        nodeBoard = Board Board(boardString);
 
         // TODO: Implement this function.
         // NOTE: This is the only function you need to modify in this class!

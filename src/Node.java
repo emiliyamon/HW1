@@ -7,7 +7,7 @@ public class Node {
     public Node(State state, Node parent, Action action) {
         this.state = state;
         this.parent = parent;
-        this.preAction = preAction;
+        this.preAction = action;
     }
 
     public State getState() {
