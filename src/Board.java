@@ -15,9 +15,9 @@ public class Board {
             rowTileList = boardRowList[i].split(" "); // splits the rows into string tiles in a list
             for (int j = 0; j < rowTileList.length; j++) {
                 if (rowTileList[j].equals("_")) {
-                    tiles[i][j] = new Tile(0);
+                    tiles[i][j] = new Tile(0); //maybe need to add 'this' before
                 } else {
-                    tiles[i][j] = new Tile(Integer.parseInt(rowTileList[j]));
+                    tiles[i][j] = new Tile(Integer.parseInt(rowTileList[j])); //maybe need to add 'this' before
                 }
             }
         }
