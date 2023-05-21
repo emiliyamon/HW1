@@ -9,28 +9,27 @@ public class Board {
         this.boardString = boardString;
         String[] boardRowList;
         String[] rowTileList;
-        boardRowList = boardString.split("|"); // splits the board into string rows in a list
+
+        boardRowList = boardString.split("\\|"); // splits the board into string rows in a list
+        rowTileList = boardRowList[0].split(" ");
+        String[][] tilesString = new String[boardRowList.length][rowTileList.length];
 
         for (int i = 0; i < boardRowList.length; i++) {
-            rowTileList = boardRowList[i].split(" "); // splits the rows into string tiles in a list
-            for (int j = 0; j < rowTileList.length; j++) {
-                if (rowTileList[j].equals("_")) {
-                    tiles[i][j] = new Tile(-1); //maybe need to add 'this' before
+            tilesString[i] = boardRowList[i].split(" "); // splits the rows into string tiles in a list
+        }
+
+        this.tiles = new Tile[tilesString.length][tilesString[0].length];
+
+        for (int i = 0; i < tilesString.length; i++) {
+            for (int j = 0; j < tilesString[0].length; j++) {
+                if (tilesString[i][j].equals("_")) {
+                    tiles[i][j] = new Tile(-1);
                 } else {
-                    tiles[i][j] = new Tile(Integer.parseInt(rowTileList[j])); //maybe need to add 'this' before
+                    tiles[i][j] = new Tile(Integer.parseInt(tilesString[i][j]));
                 }
             }
         }
-    }
 
-
-    public Board(Board originalBoard) {
-        this.tiles = new Tile[originalBoard.tiles.length][originalBoard.tiles[0].length];
-        for (int i = 0; i < originalBoard.tiles.length; i++) {
-            for (int j = 0; j < originalBoard.tiles[i].length; j++) {
-                this.tiles[i][j] = originalBoard.tiles[i][j];
-            }
-        }
     }
 
 

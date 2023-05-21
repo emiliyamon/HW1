@@ -51,7 +51,7 @@ public class State {
 
 
     public State result(Action action) {
-        Board newBoard = new Board(board);
+        Board newBoard = new Board(board.boardString);
         newBoard.findSpace(newBoard);
 
         // get index of space
