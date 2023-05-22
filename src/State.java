@@ -8,11 +8,16 @@ public class State {
 
     public boolean isGoal() {
         Board goalBoard = new Board(board.boardString);
-        int value = 0;
+        int value = 1;
         for (int i = 0; i < goalBoard.tiles.length; i++) {
             for (int j = 0; j < goalBoard.tiles[0].length; j++) {
-                goalBoard.tiles[i][j] = new Tile(value);
-                value++;
+                if (i == 0 && j == 0) {
+                    goalBoard.tiles[i][j] = new Tile(-1);
+                    value++;
+                } else {
+                    goalBoard.tiles[i][j] = new Tile(value);
+                    value++;
+                }
             }
         }
         for (int i = 0; i < goalBoard.tiles.length; i++) {
