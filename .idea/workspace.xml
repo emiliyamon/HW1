@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="21052023 2245 why are we here, just to suffer">
+    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="21052023 2308 still not working but im done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HeuristicValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HeuristicValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684698360205</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="21052023 2308 still not working but im done">
+      <created>1684699754452</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1684699754452</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,7 +302,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="17052023 1226" />
     <MESSAGE value="17052023 1325" />
     <MESSAGE value="17052023 1355 added action class" />
     <MESSAGE value="17052023 1358 fixed action class" />
@@ -321,6 +326,7 @@
     <MESSAGE value="21052023 1951 97 problems but mistake in Board aint one" />
     <MESSAGE value="21052023 2001 97 problems but mistake in Board aint one" />
     <MESSAGE value="21052023 2245 why are we here, just to suffer" />
-    <option name="LAST_COMMIT_MESSAGE" value="21052023 2245 why are we here, just to suffer" />
+    <MESSAGE value="21052023 2308 still not working but im done" />
+    <option name="LAST_COMMIT_MESSAGE" value="21052023 2308 still not working but im done" />
   </component>
 </project>
