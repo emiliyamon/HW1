@@ -11,9 +11,9 @@ public class State {
         int value = 1;
         for (int i = 0; i < goalBoard.tiles.length; i++) {
             for (int j = 0; j < goalBoard.tiles[0].length; j++) {
-                if (i == 0 && j == 0) {
+                if (i == (goalBoard.tiles.length - 1) && j == (goalBoard.tiles[0].length-1)) {
                     goalBoard.tiles[i][j] = new Tile(-1);
-                    value++;
+                    //value++;
                 } else {
                     goalBoard.tiles[i][j] = new Tile(value);
                     value++;

@@ -21,8 +21,8 @@ public class Search {
     private Node getRoot(String boardString) {
         Board nodeBoard = new Board(boardString);
         State nodeState = new State(nodeBoard);
-        Node initialNode;
-        return initialNode = new Node(nodeState, null, null); //parent & preAction is missing
+        //Node initialNode;
+        return new Node(nodeState, null, null); //parent & preAction is missing - first node
 
         // TODO: Implement this function.
         // NOTE: This is the only function you need to modify in this class!
