@@ -36,7 +36,7 @@ public class Board {
                 if (tilesString[j].equals("_")) {
                     tiles[0][j] = new Tile(-1);
                 } else {
-                    tiles[0][1] = new Tile(Integer.parseInt(tilesString[j]));
+                    tiles[0][j] = new Tile(Integer.parseInt(tilesString[j]));
                 }
             }
         }

@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="22052023 1545 still not working but updated board constructor">
+    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="22052023 1555 still not working but updated board constructor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/State.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684759530359</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="22052023 1555 still not working but updated board constructor">
+      <created>1684760135092</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1684760135092</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,7 +317,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="17052023 1355 added action class" />
     <MESSAGE value="17052023 1358 fixed action class" />
     <MESSAGE value="18052023 1703 updated board class" />
     <MESSAGE value="18052023 1703 updated Board and Tile classes" />
@@ -333,7 +341,8 @@
     <MESSAGE value="21052023 2245 why are we here, just to suffer" />
     <MESSAGE value="21052023 2308 still not working but im done" />
     <MESSAGE value="22052023 1545 still not working but updated board constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="22052023 1545 still not working but updated board constructor" />
+    <MESSAGE value="22052023 1555 still not working but updated board constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="22052023 1555 still not working but updated board constructor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
