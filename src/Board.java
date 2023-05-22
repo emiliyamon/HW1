@@ -8,37 +8,21 @@ public class Board {
     public Board(String boardString) {
         this.boardString = boardString;
 
-        if (boardString.contains("\\|")) {
-            // Code for handling multiple rows
-            String[] boardRowList = boardString.split("\\|");
-            String[] rowTileList = boardRowList[0].split(" ");
-            String[][] tilesString = new String[boardRowList.length][rowTileList.length];
+        String[] boardRowList = boardString.split("\\|");
+        String[] rowTileList = boardRowList[0].split(" ");
+        String[][] tilesString = new String[boardRowList.length][rowTileList.length];
 
-            for (int i = 0; i < boardRowList.length; i++) {
-                tilesString[i] = boardRowList[i].split(" ");
-            }
-            this.tiles = new Tile[tilesString.length][tilesString[0].length];
+        for (int i = 0; i < boardRowList.length; i++) {
+            tilesString[i] = boardRowList[i].split(" ");
+        }
+        this.tiles = new Tile[tilesString.length][tilesString[0].length];
 
-            for (int i = 0; i < tilesString.length; i++) {
-                for (int j = 0; j < tilesString[0].length; j++) {
-                    if (tilesString[i][j].equals("_")) {
-                        tiles[i][j] = new Tile(-1);
-                    } else {
-                        tiles[i][j] = new Tile(Integer.parseInt(tilesString[i][j]));
-                    }
-                }
-            }
-        } else {
-            // Code for handling single row
-            String[] tilesString = boardString.split(" ");
-
-            this.tiles = new Tile[1][tilesString.length];
-
-            for (int j = 0; j < tilesString.length; j++) {
-                if (tilesString[j].equals("_")) {
-                    tiles[0][j] = new Tile(-1);
+        for (int i = 0; i < tilesString.length; i++) {
+            for (int j = 0; j < tilesString[0].length; j++) {
+                if (tilesString[i][j].equals("_")) {
+                    tiles[i][j] = new Tile(-1);
                 } else {
-                    tiles[0][j] = new Tile(Integer.parseInt(tilesString[j]));
+                    tiles[i][j] = new Tile(Integer.parseInt(tilesString[i][j]));
                 }
             }
         }
