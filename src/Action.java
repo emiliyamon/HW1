@@ -7,7 +7,7 @@ public class Action {
         this.tile = tile;
     }
 
-    public String toString () {
+    public String toString() {
         return "move" + " " + tile + " " + direction;
     }
 }

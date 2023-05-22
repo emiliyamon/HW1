@@ -7,8 +7,8 @@ public class Board {
 
     public Board(String boardString) {
         this.boardString = boardString;
-        String[] boardRowList;
-        String[] rowTileList;
+        String[] boardRowList; //list of board rows
+        String[] rowTileList; //list of tiles in one row
 
         boardRowList = boardString.split("\\|"); // splits the board into string rows in a list
         rowTileList = boardRowList[0].split(" ");
@@ -36,7 +36,7 @@ public class Board {
         for (int i = 0; i < board.tiles.length; i++) {
             for (int j = 0; j < board.tiles[0].length; j++) {
                 if (tiles[i][j].isSpace()) {
-                    return i + " " + j;
+                    return (i + " " + j);
                 }
             }
         }
