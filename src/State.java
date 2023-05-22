@@ -8,11 +8,16 @@ public class State {
 
     public boolean isGoal() {
         Board goalBoard = new Board(board.boardString);
-        int value = 0;
+        int value = 1;
         for (int i = 0; i < goalBoard.tiles.length; i++) {
             for (int j = 0; j < goalBoard.tiles[0].length; j++) {
-                goalBoard.tiles[i][j] = new Tile(value);
-                value++;
+                if (i == 0 && j == 0) {
+                    goalBoard.tiles[i][j] = new Tile(-1);
+                    value++;
+                } else {
+                    goalBoard.tiles[i][j] = new Tile(value);
+                    value++;
+                }
             }
         }
         for (int i = 0; i < goalBoard.tiles.length; i++) {
@@ -75,24 +80,29 @@ public class State {
             }
         }
 
+        int newRow = rowIndex;
+        int newCol = colIndex;
+
         switch (action.direction) {
             case UP:
-                newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex - 1][colIndex];
-                newBoard.tiles[rowIndex - 1][colIndex] = new Tile(-1);
+                newRow = rowIndex - 1;
                 break;
             case DOWN:
-                newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex + 1][colIndex];
-                newBoard.tiles[rowIndex + 1][colIndex] = new Tile(-1);
+                newRow = rowIndex + 1;
                 break;
             case RIGHT:
-                newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex][colIndex + 1];
-                newBoard.tiles[rowIndex][colIndex + 1] = new Tile(-1);
+                newCol = colIndex + 1;
                 break;
             case LEFT:
-                newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[rowIndex][colIndex - 1];
-                newBoard.tiles[rowIndex][colIndex - 1] = new Tile(-1);
+                newCol = colIndex - 1;
                 break;
         }
+
+        if (newRow >= 0 && newRow < newBoard.tiles.length && newCol >= 0 && newCol < newBoard.tiles[0].length) {
+            newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[newRow][newCol];
+            newBoard.tiles[newRow][newCol] = new Tile(-1);
+        }
+
         return new State(newBoard);
     }
 
