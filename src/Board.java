@@ -1,5 +1,9 @@
 import java.util.Arrays;
 
+/**
+ * Represents a puzzle board
+ * provides methods of checking for desired tiles
+ */
 public class Board {
     private Tile[][] tiles;
 

@@ -1,3 +1,7 @@
+/**
+ * Represents a tile in a puzzle board
+ * This class encapsulates the properties and behavior of a single tile in a puzzle board
+ */
 public class Tile {
     private final int value;
 

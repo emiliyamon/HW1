@@ -1,3 +1,7 @@
+/**
+ * Represents an action in a puzzle game
+ * This class encapsulates the properties and behavior of an action that can be performed in a puzzle game
+ */
 public class Action {
     private EnumDirections direction;
     private Tile tile;
@@ -17,6 +21,12 @@ public class Action {
         return tile;
     }
 
+
+    /**
+     * function for printing the move made in a string format
+     *
+     * @return string description of move made
+     */
     public String toString() {
         String[] directionsList = {"up", "down", "right", "left"};
         int i = -1;

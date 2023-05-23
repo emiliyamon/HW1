@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="23052023 1813 working!!!!!&#10;6/14">
+    <list default="true" id="71e23ac8-2faa-4f78-8ca6-88800d463499" name="Changes" comment="23052023 1831 working!!!!!&#10;6/14">
+      <change beforePath="$PROJECT_DIR$/src/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EnumDirections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnumDirections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HeuristicValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HeuristicValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,13 +52,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683715233279</updated>
-    </task>
-    <task id="LOCAL-00001" summary="goodluck to us">
-      <created>1684064878639</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1684064878639</updated>
     </task>
     <task id="LOCAL-00002" summary="goodluck to us - test change">
       <created>1684065144412</created>
@@ -392,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684854830891</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="23052023 1831 working!!!!!&#10;6/14">
+      <created>1684855884501</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1684855884501</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -407,7 +411,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="21052023 1635 updated constructor in Board" />
     <MESSAGE value="21052023 1745 99 mistake but out of bounds aint one" />
     <MESSAGE value="21052023 1820 99 mistakes but out of bounds aint one" />
     <MESSAGE value="21052023 1836" />
@@ -432,6 +435,7 @@
     <MESSAGE value="23052023 1736 working!!!!!" />
     <MESSAGE value="23052023 1751 working!!!!!&#10;with heuristic that doesnt make it work faster" />
     <MESSAGE value="23052023 1813 working!!!!!&#10;6/14" />
-    <option name="LAST_COMMIT_MESSAGE" value="23052023 1813 working!!!!!&#10;6/14" />
+    <MESSAGE value="23052023 1831 working!!!!!&#10;6/14" />
+    <option name="LAST_COMMIT_MESSAGE" value="23052023 1831 working!!!!!&#10;6/14" />
   </component>
 </project>
