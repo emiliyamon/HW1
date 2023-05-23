@@ -23,7 +23,7 @@ public class State {
 
 
     public Action[] actions() {
-        int[][] possibleActions = board.checkMoves(board);
+        int[][] possibleActions = board.checkMoves(this.board);
         //  (tile,up), (tile,down), (tile,right), (tile,left)
         int arrayLen = 0;
         for (int i = 0; i < possibleActions.length; i++) {
@@ -57,13 +57,13 @@ public class State {
 
 
     public State result(Action action) {
-        Board newBoard = new Board(board);
-        int rowIndex = -1;
+        Board newBoard = new Board(this.board);
+        int rowIndex = -1; // the problem is here
         int colIndex = -1;
 
         for (int i = 0; i < newBoard.tiles.length; i++) {
             for (int j = 0; j < newBoard.tiles[0].length; j++) {
-                if (newBoard.tiles[i][j].value == action.tile.value) {
+                if (newBoard.tiles[i][j].getValue() == action.tile.getValue()) {
                     rowIndex = i;
                     colIndex = j;
                     break;
@@ -89,10 +89,9 @@ public class State {
                 break;
         }
 
-        if (newRow >= 0 && newRow < newBoard.tiles.length && newCol >= 0 && newCol < newBoard.tiles[0].length) {
-            newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[newRow][newCol];
-            newBoard.tiles[newRow][newCol] = new Tile(-1);
-        }
+        newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[newRow][newCol];
+        newBoard.tiles[newRow][newCol] = new Tile(-1);
+
 
         return new State(newBoard);
     }
