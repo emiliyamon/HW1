@@ -37,11 +37,18 @@ public class Board {
         }
     }
 
+
     public Tile[][] getTiles() {
         return tiles;
     }
 
 
+    /**
+     * finds the index of the "space" tile in the current board.
+     *
+     * @param board current board
+     * @return int array which consist of  {row index, col index} of "space" tile
+     */
     public int[] findSpace(Board board) {
         int[] spaceIndex = new int[2];
         for (int i = 0; i < board.tiles.length; i++) {
@@ -57,60 +64,13 @@ public class Board {
     }
 
 
-    public int[][] checkMoves(Board board) {
-        // get index of space
-        int[] spaceIndex = board.findSpace(board);
-
-        int rowIndex = spaceIndex[0];
-        int colIndex = spaceIndex[1];
-        int firstRow = 0;
-        int maxRow = board.tiles.length - 1;
-        int firstCol = 0;
-        int maxCol = board.tiles[0].length - 1;
-
-
-        int[][] movableTiles = new int[4][2];
-
-        boolean up = !(rowIndex == maxRow); // false if there's no tile below space
-        if (up) {
-            movableTiles[0][0] = board.tiles[rowIndex + 1][colIndex].getValue();
-            movableTiles[0][1] = 1;
-        } else {
-            movableTiles[0][0] = 0;
-            movableTiles[0][1] = 0;
-        }
-
-        boolean down = !(rowIndex == firstRow); // false if there's no tile above space
-        if (down) {
-            movableTiles[1][0] = board.tiles[rowIndex - 1][colIndex].getValue();
-            movableTiles[1][1] = 1;
-        } else {
-            movableTiles[1][0] = 0;
-            movableTiles[1][1] = 0;
-        }
-
-        boolean right = !(colIndex == firstCol); // false if there's no tile to the left of space
-        if (right) {
-            movableTiles[2][0] = board.tiles[rowIndex][colIndex - 1].getValue();
-            movableTiles[2][1] = 1;
-        } else {
-            movableTiles[2][0] = 0;
-            movableTiles[2][1] = 0;
-        }
-
-        boolean left = !(colIndex == maxCol); // false if there's no tile to the right of space
-        if (left) {
-            movableTiles[3][0] = board.tiles[rowIndex][colIndex + 1].getValue();
-            movableTiles[3][1] = 1;
-        } else {
-            movableTiles[3][0] = 0;
-            movableTiles[3][1] = 0;
-        }
-        
-        return movableTiles;
-    }
-
-
+    /**
+     * finds the index of the requested value in the current board
+     *
+     * @param tiles current board Tile array
+     * @param value the desired Tile value
+     * @return int array which consist of  {row index, col index} of desired tile
+     */
     public int[] findIndex(Tile[][] tiles, int value) {
         int[] indexList = new int[2];
         for (int i = 0; i < tiles.length; i++) {

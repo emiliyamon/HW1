@@ -10,6 +10,12 @@ public class Tile {
         return value;
     }
 
+
+    /**
+     * check if the tile is the "space" tile in a board.
+     *
+     * @return boolean true or false according to test result.
+     */
     public boolean isSpace() {
         if (value == -1) {
             return true;
