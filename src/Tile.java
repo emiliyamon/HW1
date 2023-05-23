@@ -6,6 +6,10 @@ public class Tile {
     }
 
 
+    public int getValue() {
+        return value;
+    }
+
     public boolean isSpace() {
         if (value == -1) {
             return true;

@@ -7,27 +7,18 @@ public class State {
     }
 
     public boolean isGoal() {
-        Board goalBoard = new Board(board.boardString);
-        int value = 1;
+        Board goalBoard = board.goalBoard(board.boardString);
+        boolean flag = true;
+
         for (int i = 0; i < goalBoard.tiles.length; i++) {
             for (int j = 0; j < goalBoard.tiles[0].length; j++) {
-                if (i == (goalBoard.tiles.length - 1) && j == (goalBoard.tiles[0].length-1)) {
-                    goalBoard.tiles[i][j] = new Tile(-1);
-                    //value++;
-                } else {
-                    goalBoard.tiles[i][j] = new Tile(value);
-                    value++;
+                if (goalBoard.tiles[i][j].getValue() != this.board.tiles[i][j].getValue()) {
+                    flag = false;
+                    break;
                 }
             }
         }
-        for (int i = 0; i < goalBoard.tiles.length; i++) {
-            for (int j = 0; j < goalBoard.tiles[0].length; j++) {
-                if (goalBoard.tiles[i][j].value != board.tiles[i][j].value) {
-                    return false;
-                }
-            }
-        }
-        return true;
+        return flag;
     }
 
 
@@ -66,7 +57,7 @@ public class State {
 
 
     public State result(Action action) {
-        Board newBoard = new Board(board.boardString);
+        Board newBoard = new Board(board);
         int rowIndex = -1;
         int colIndex = -1;
 

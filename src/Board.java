@@ -29,6 +29,35 @@ public class Board {
     }
 
 
+    public Board(Board other) {
+        this.boardString = other.boardString;
+        this.tiles = new Tile[other.tiles.length][other.tiles[0].length];
+
+        for (int i = 0; i < other.tiles.length; i++) {
+            for (int j = 0; j < other.tiles[0].length; j++) {
+                this.tiles[i][j] = new Tile(other.tiles[i][j].getValue());
+            }
+        }
+    }
+
+    public Board goalBoard(String boardString) {
+        Board goalBoard = new Board(boardString);
+        int value = 1;
+        for (int i = 0; i < goalBoard.tiles.length; i++) {
+            for (int j = 0; j < goalBoard.tiles[0].length; j++) {
+                if (i == (goalBoard.tiles.length - 1) && j == (goalBoard.tiles[0].length-1)) {
+                    goalBoard.tiles[i][j] = new Tile(-1);
+                    //value++;
+                } else {
+                    goalBoard.tiles[i][j] = new Tile(value);
+                    value++;
+                }
+            }
+        }
+        return goalBoard;
+    }
+
+
     public String findSpace(Board board) {
         for (int i = 0; i < board.tiles.length; i++) {
             for (int j = 0; j < board.tiles[0].length; j++) {
