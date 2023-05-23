@@ -24,10 +24,10 @@ public class Node {
 
 
     public Node[] expand() {
-        Action[] possibleActions = this.state.actions();
-        Node[] children = new Node[possibleActions.length];
+        Action[] actions = this.state.actions();
+        Node[] children = new Node[actions.length];
         int i = 0;
-        for (Action action : possibleActions) {
+        for (Action action : actions) {
             State newState = this.state.result(action);
             Action newAction = new Action(action.getDirection(), action.getTile());
             Node child = new Node(newState, this, newAction);

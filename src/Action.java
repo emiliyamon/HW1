@@ -18,6 +18,6 @@ public class Action {
     }
 
     public String toString() {
-        return "move" + " " + tile + " " + direction;
+        return "move" + " " + tile.getValue() + " " + direction;
     }
 }

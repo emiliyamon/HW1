@@ -24,8 +24,7 @@ public class State {
                 }
             }
         }
-        boolean flag = (correctValue - 1 == maxValue);
-        return flag;
+        return  (correctValue - 1 == maxValue);
     }
 
 
@@ -117,24 +116,24 @@ public class State {
         int value = tile.getValue();
         int[] indexList = board.findIndex(tiles, value);
 
-        int rowIndex = indexList[0];
-        int colIndex = indexList[1];
+        int tileRowIndex = indexList[0];
+        int tileColIndex = indexList[1];
 
-        int newRow = rowIndex;
-        int newCol = colIndex;
+        int newRow = tileRowIndex;
+        int newCol = tileColIndex;
 
         switch (action.getDirection()) {
             case UP:
-                newRow = rowIndex - 1;
+                newRow = tileRowIndex - 1;
                 break;
             case DOWN:
-                newRow = rowIndex + 1;
+                newRow = tileRowIndex + 1;
                 break;
             case RIGHT:
-                newCol = colIndex + 1;
+                newCol = tileColIndex + 1;
                 break;
             case LEFT:
-                newCol = colIndex - 1;
+                newCol = tileColIndex - 1;
                 break;
         }
 
@@ -145,8 +144,8 @@ public class State {
             }
         }
 
-        newTiles[rowIndex][colIndex] = tile;
-        newTiles[newRow][newCol] = space;
+        newTiles[tileRowIndex][tileColIndex] = space;
+        newTiles[newRow][newCol] = tile;
 
         Board newBoard = new Board(newTiles);
         return new State(newBoard);
