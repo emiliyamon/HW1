@@ -42,28 +42,27 @@ public class Board {
     }
 
 
-    public String findSpace(Board board) {
+    public int[] findSpace(Board board) {
+        int[] spaceIndex = new int[2];
         for (int i = 0; i < board.tiles.length; i++) {
             for (int j = 0; j < board.tiles[0].length; j++) {
                 if (tiles[i][j].isSpace()) {
-                    return (i + " " + j);
+                    spaceIndex[0] = i;
+                    spaceIndex[1] = j;
+                    break;
                 }
             }
         }
-        return "Mistake in loop";
+        return spaceIndex;
     }
 
 
     public int[][] checkMoves(Board board) {
         // get index of space
-        String[] indexString = board.findSpace(board).split(" ");
-        int[] indexInt = new int[indexString.length];
-        for (int i = 0; i < indexString.length; i++) {
-            indexInt[i] = Integer.parseInt(indexString[i]);
-        }
+        int[] spaceIndex = board.findSpace(board);
 
-        int rowIndex = indexInt[0];
-        int colIndex = indexInt[1];
+        int rowIndex = spaceIndex[0];
+        int colIndex = spaceIndex[1];
         int firstRow = 0;
         int maxRow = board.tiles.length - 1;
         int firstCol = 0;

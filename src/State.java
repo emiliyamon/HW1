@@ -30,34 +30,81 @@ public class State {
 
 
     public Action[] actions() {
-        int[][] possibleActions = board.checkMoves(this.board);
+        // get index of space
+        int[] spaceIndex = board.findSpace(board);
+        int spaceRowIndex = spaceIndex[0]; //0
+        int spaceColIndex = spaceIndex[1];  //0
+
+        int firstRow = 0;
+        int maxRow = board.getTiles().length - 1;
+        int firstCol = 0;
+        int maxCol = board.getTiles()[0].length - 1;
+
+        int[][] movableTiles = new int[4][2];
+
+        boolean upTest = (spaceRowIndex != maxRow); // false if there's no tile below space
+        if (upTest) {
+            movableTiles[0][0] = board.getTiles()[spaceRowIndex + 1][spaceColIndex].getValue();
+            movableTiles[0][1] = 1;
+        } else {
+            movableTiles[0][0] = 0;
+            movableTiles[0][1] = 0;
+        }
+
+        boolean downTest = (spaceRowIndex != firstRow); // false if there's no tile above space
+        if (downTest) {
+            movableTiles[1][0] = board.getTiles()[spaceRowIndex - 1][spaceColIndex].getValue();
+            movableTiles[1][1] = 1;
+        } else {
+            movableTiles[1][0] = 0;
+            movableTiles[1][1] = 0;
+        }
+
+        boolean rightTest = (spaceColIndex != firstCol); // false if there's no tile to the left of space
+        if (rightTest) {
+            movableTiles[2][0] = board.getTiles()[spaceRowIndex][spaceColIndex - 1].getValue();
+            movableTiles[2][1] = 1;
+        } else {
+            movableTiles[2][0] = 0;
+            movableTiles[2][1] = 0;
+        }
+
+        boolean leftTest = (spaceColIndex != maxCol); // false if there's no tile to the right of space
+        if (leftTest) {
+            movableTiles[3][0] = board.getTiles()[spaceRowIndex][spaceColIndex + 1].getValue();
+            movableTiles[3][1] = 1;
+        } else {
+            movableTiles[3][0] = 0;
+            movableTiles[3][1] = 0;
+        }
         //  (tile,up), (tile,down), (tile,right), (tile,left)
+
         int arrayLen = 0;
-        for (int i = 0; i < possibleActions.length; i++) {
-            arrayLen += possibleActions[i][1];
+        for (int i = 0; i < movableTiles.length; i++) {
+            arrayLen += movableTiles[i][1];
         }
         Action[] actions = new Action[arrayLen];
 
-        int up = possibleActions[0][1];
-        int down = possibleActions[1][1];
-        int right = possibleActions[2][1];
-        int left = possibleActions[3][1];
+        int up = movableTiles[0][1];
+        int down = movableTiles[1][1];
+        int right = movableTiles[2][1];
+        int left = movableTiles[3][1];
 
         int i = 0;
         if (up != 0) {
-            actions[i] = new Action(EnumDirections.UP, new Tile(possibleActions[0][0]));
+            actions[i] = new Action(EnumDirections.UP, new Tile(movableTiles[0][0]));
             i++;
         }
         if (down != 0) {
-            actions[i] = new Action(EnumDirections.DOWN, new Tile(possibleActions[1][0]));
+            actions[i] = new Action(EnumDirections.DOWN, new Tile(movableTiles[1][0]));
             i++;
         }
         if (right != 0) {
-            actions[i] = new Action(EnumDirections.RIGHT, new Tile(possibleActions[2][0]));
+            actions[i] = new Action(EnumDirections.RIGHT, new Tile(movableTiles[2][0]));
             i++;
         }
         if (left != 0) {
-            actions[i] = new Action(EnumDirections.LEFT, new Tile(possibleActions[3][0]));
+            actions[i] = new Action(EnumDirections.LEFT, new Tile(movableTiles[3][0]));
         }
         return actions;
     }
