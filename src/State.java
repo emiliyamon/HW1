@@ -24,7 +24,7 @@ public class State {
                 }
             }
         }
-        boolean flag = (correctValue == maxValue);
+        boolean flag = (correctValue - 1 == maxValue);
         return flag;
     }
 
