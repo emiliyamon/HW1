@@ -1,3 +1,7 @@
+/**
+ * Represents a node in a search algorithm
+ * This class encapsulates the properties and behavior of a node in a search algorithm, such as a state, parent node, and action
+ */
 public class Node {
     private State state; // current state
     private Node parent; // previous node
@@ -23,6 +27,12 @@ public class Node {
     }
 
 
+    /**
+     * expand function gets all possible actions on a current state board represented in the node
+     * and create an array of "children" based on the possible actions
+     *
+     * @return Node array of "child" Nodes which can be created for the current node (who will be set as the parent)
+     */
     public Node[] expand() {
         Action[] actions = this.state.actions();
         Node[] children = new Node[actions.length];
@@ -37,6 +47,11 @@ public class Node {
         return children;
     }
 
+
+    /**
+     * function for getting the heuristic value of the current node
+     * @return int value of current node's board heuristic value
+     */
     public int heuristicValue() {
         HeuristicValue heuristic = new HeuristicValue(this.state.getBoard());
         return heuristic.getHeuristic();

@@ -1,3 +1,8 @@
+/**
+ * Represents a heuristic value for a puzzle state
+ * This class encapsulates the value used to estimate the cost
+ * from a given state to the goal state in a puzzle-solving algorithm.
+ */
 public class HeuristicValue {
     private int heuristic;
 
