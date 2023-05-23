@@ -1,3 +1,7 @@
+/**
+ * Represents a state in a puzzle game.
+ * This class encapsulates the properties and behavior of a state in a puzzle game, such as the game board configuration.
+ */
 public class State {
     private Board board;
 
@@ -119,6 +123,7 @@ public class State {
 
     /**
      * Conducting the action to the last board, and making new board and state.
+     *
      * @param action the action conducts to the tiles.
      * @return new state made out of action on the previous board.
      */
