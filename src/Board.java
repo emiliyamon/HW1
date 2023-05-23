@@ -1,12 +1,10 @@
 import java.util.Arrays;
 
 public class Board {
-    final private String boardString;
     private Tile[][] tiles;
 
 
     public Board(String boardString) {
-        this.boardString = boardString;
 
         String[] boardRowList = boardString.split("\\|");
         String[] rowTileList = boardRowList[0].split(" ");
@@ -29,40 +27,18 @@ public class Board {
     }
 
 
-    public Board(Board other) {
-        this.boardString = other.boardString;
-        this.tiles = new Tile[other.tiles.length][other.tiles[0].length];
+    public Board(Tile[][] tiles) {
+        this.tiles = tiles;
 
-        for (int i = 0; i < other.tiles.length; i++) {
-            for (int j = 0; j < other.tiles[0].length; j++) {
-                this.tiles[i][j] = new Tile(other.tiles[i][j].getValue());
+        for (int i = 0; i < tiles.length; i++) {
+            for (int j = 0; j < tiles[0].length; j++) {
+                this.tiles[i][j] = new Tile(tiles[i][j].getValue());
             }
         }
     }
 
     public Tile[][] getTiles() {
         return tiles;
-    }
-
-    public String getBoardString() {
-        return boardString;
-    }
-
-    public Board goalBoard(String boardString) {
-        Board goalBoard = new Board(boardString);
-        int value = 1;
-        for (int i = 0; i < goalBoard.tiles.length; i++) {
-            for (int j = 0; j < goalBoard.tiles[0].length; j++) {
-                if (i == (goalBoard.tiles.length - 1) && j == (goalBoard.tiles[0].length-1)) {
-                    goalBoard.tiles[i][j] = new Tile(-1);
-                    //value++;
-                } else {
-                    goalBoard.tiles[i][j] = new Tile(value);
-                    value++;
-                }
-            }
-        }
-        return goalBoard;
     }
 
 

@@ -12,17 +12,19 @@ public class State {
     }
 
     public boolean isGoal() {
-        Board goalBoard = board.goalBoard(board.getBoardString());
-        boolean flag = true;
+        int correctValue = 1;
+        int maxValue = (board.getTiles().length * board.getTiles()[0].length) - 1;
 
-        for (int i = 0; i < goalBoard.getTiles().length; i++) {
-            for (int j = 0; j < goalBoard.getTiles()[0].length; j++) {
-                if (goalBoard.getTiles()[i][j].getValue() != this.board.getTiles()[i][j].getValue()) {
-                    flag = false;
-                    break;
+        for (int i = 0; i < board.getTiles().length; i++) {
+            for (int j = 0; j < board.getTiles()[0].length; j++) {
+                if (i == (board.getTiles().length - 1) && j == (board.getTiles()[0].length-1)) {
+                    continue;
+                } else if (board.getTiles()[i][j].getValue() == correctValue) {
+                    correctValue++;
                 }
             }
         }
+        boolean flag = (correctValue == maxValue);
         return flag;
     }
 
@@ -62,9 +64,10 @@ public class State {
 
 
     public State result(Action action) {
-        Board newBoard = new Board(this.board);
+
         Tile[][] tiles = board.getTiles();
         Tile tile = action.getTile();
+        Tile space = new Tile(-1);
         int value = tile.getValue();
         int[] indexList = board.findIndex(tiles, value);
 
@@ -89,9 +92,10 @@ public class State {
                 break;
         }
 
-        newBoard.getTiles()[rowIndex][colIndex] = newBoard.getTiles()[newRow][newCol];
-        newBoard.getTiles()[newRow][newCol] = new Tile(-1);
+        tiles[rowIndex][colIndex] = tile;
+        tiles[newRow][newCol] = space;
 
+        Board newBoard = new Board(tiles);
 
         return new State(newBoard);
     }
