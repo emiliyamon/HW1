@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
 public class Board {
-    String boardString;
-    Tile[][] tiles;
+    private String boardString;
+    private Tile[][] tiles;
 
 
     public Board(String boardString) {
@@ -38,6 +38,14 @@ public class Board {
                 this.tiles[i][j] = new Tile(other.tiles[i][j].getValue());
             }
         }
+    }
+
+    public Tile[][] getTiles() {
+        return tiles;
+    }
+
+    public String getBoardString() {
+        return boardString;
     }
 
     public Board goalBoard(String boardString) {
@@ -90,7 +98,7 @@ public class Board {
 
         boolean up = !(rowIndex == maxRow); // false if there's no tile below space
         if (up) {
-            movableTiles[0][0] = board.tiles[rowIndex + 1][colIndex].value;
+            movableTiles[0][0] = board.tiles[rowIndex + 1][colIndex].getValue();
             movableTiles[0][1] = 1;
         } else {
             movableTiles[0][0] = 0;
@@ -99,7 +107,7 @@ public class Board {
 
         boolean down = !(rowIndex == firstRow); // false if there's no tile above space
         if (down) {
-            movableTiles[1][0] = board.tiles[rowIndex - 1][colIndex].value;
+            movableTiles[1][0] = board.tiles[rowIndex - 1][colIndex].getValue();
             movableTiles[1][1] = 1;
         } else {
             movableTiles[1][0] = 0;
@@ -108,7 +116,7 @@ public class Board {
 
         boolean right = !(colIndex == firstCol); // false if there's no tile to the left of space
         if (right) {
-            movableTiles[2][0] = board.tiles[rowIndex][colIndex - 1].value;
+            movableTiles[2][0] = board.tiles[rowIndex][colIndex - 1].getValue();
             movableTiles[2][1] = 1;
         } else {
             movableTiles[2][0] = 0;
@@ -117,7 +125,7 @@ public class Board {
 
         boolean left = !(colIndex == maxCol); // false if there's no tile to the right of space
         if (left) {
-            movableTiles[3][0] = board.tiles[rowIndex][colIndex + 1].value;
+            movableTiles[3][0] = board.tiles[rowIndex][colIndex + 1].getValue();
             movableTiles[3][1] = 1;
         } else {
             movableTiles[3][0] = 0;

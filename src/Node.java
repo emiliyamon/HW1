@@ -1,7 +1,7 @@
 public class Node {
-    State state; // current state
-    Node parent; // previous node
-    Action preAction; // the action that was made to get to current state
+    private State state; // current state
+    private Node parent; // previous node
+    private Action preAction; // the action that was made to get to current state
 
 
     public Node(State state, Node parent, Action preAction) {
@@ -29,7 +29,7 @@ public class Node {
         int i = 0;
         for (Action action : possibleActions) {
             State newState = this.state.result(action);
-            Action newAction = new Action(action.direction, action.tile);
+            Action newAction = new Action(action.getDirection(), action.getTile());
             Node child = new Node(newState, this, newAction);
             children[i] = child;
             i++;
@@ -38,7 +38,7 @@ public class Node {
     }
 
     public int heuristicValue() {
-        HeuristicValue heuristic = new HeuristicValue(this.state.board);
-        return heuristic.heuristic;
+        HeuristicValue heuristic = new HeuristicValue(this.state.getBoard());
+        return heuristic.getHeuristic();
     }
 }

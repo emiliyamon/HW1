@@ -1,18 +1,23 @@
 public class State {
-    Board board;
+    private Board board;
 
 
     public State (Board board) {
         this.board = board;
     }
 
+
+    public Board getBoard() {
+        return board;
+    }
+
     public boolean isGoal() {
-        Board goalBoard = board.goalBoard(board.boardString);
+        Board goalBoard = board.goalBoard(board.getBoardString());
         boolean flag = true;
 
-        for (int i = 0; i < goalBoard.tiles.length; i++) {
-            for (int j = 0; j < goalBoard.tiles[0].length; j++) {
-                if (goalBoard.tiles[i][j].getValue() != this.board.tiles[i][j].getValue()) {
+        for (int i = 0; i < goalBoard.getTiles().length; i++) {
+            for (int j = 0; j < goalBoard.getTiles()[0].length; j++) {
+                if (goalBoard.getTiles()[i][j].getValue() != this.board.getTiles()[i][j].getValue()) {
                     flag = false;
                     break;
                 }
@@ -61,9 +66,9 @@ public class State {
         int rowIndex = -1; // the problem is here
         int colIndex = -1;
 
-        for (int i = 0; i < newBoard.tiles.length; i++) {
-            for (int j = 0; j < newBoard.tiles[0].length; j++) {
-                if (newBoard.tiles[i][j].getValue() == action.tile.getValue()) {
+        for (int i = 0; i < newBoard.getTiles().length; i++) {
+            for (int j = 0; j < newBoard.getTiles()[0].length; j++) {
+                if (newBoard.getTiles()[i][j].getValue() == action.getTile().getValue()) {
                     rowIndex = i;
                     colIndex = j;
                     break;
@@ -74,7 +79,7 @@ public class State {
         int newRow = rowIndex;
         int newCol = colIndex;
 
-        switch (action.direction) {
+        switch (action.getDirection()) {
             case UP:
                 newRow = rowIndex - 1;
                 break;
@@ -89,8 +94,8 @@ public class State {
                 break;
         }
 
-        newBoard.tiles[rowIndex][colIndex] = newBoard.tiles[newRow][newCol];
-        newBoard.tiles[newRow][newCol] = new Tile(-1);
+        newBoard.getTiles()[rowIndex][colIndex] = newBoard.getTiles()[newRow][newCol];
+        newBoard.getTiles()[newRow][newCol] = new Tile(-1);
 
 
         return new State(newBoard);
