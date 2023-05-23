@@ -64,7 +64,6 @@ public class State {
 
 
     public State result(Action action) {
-
         Tile[][] tiles = board.getTiles();
         Tile tile = action.getTile();
         Tile space = new Tile(-1);
@@ -92,11 +91,17 @@ public class State {
                 break;
         }
 
-        tiles[rowIndex][colIndex] = tile;
-        tiles[newRow][newCol] = space;
+        Tile[][] newTiles = new Tile[tiles.length][tiles[0].length];
+        for (int i = 0; i < tiles.length; i++) {
+            for (int j = 0; j < tiles[0].length; j++) {
+                newTiles[i][j] = new Tile(tiles[i][j].getValue());
+            }
+        }
 
-        Board newBoard = new Board(tiles);
+        newTiles[rowIndex][colIndex] = tile;
+        newTiles[newRow][newCol] = space;
 
+        Board newBoard = new Board(newTiles);
         return new State(newBoard);
     }
 
