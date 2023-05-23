@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Board {
-    private String boardString;
+    final private String boardString;
     private Tile[][] tiles;
 
 
@@ -133,6 +133,21 @@ public class Board {
         }
         
         return movableTiles;
+    }
+
+
+    public int[] findIndex(Tile[][] tiles, int value) {
+        int[] indexList = new int[2];
+        for (int i = 0; i < tiles.length; i++) {
+            for (int j = 0; j < tiles[0].length; j++) {
+                if (tiles[i][j].getValue() == value) {
+                    indexList[0] = i;
+                    indexList[1] = j;
+                    break;
+                }
+            }
+        }
+        return indexList;
     }
 
 
