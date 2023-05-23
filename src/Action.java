@@ -18,6 +18,23 @@ public class Action {
     }
 
     public String toString() {
-        return "move" + " " + tile.getValue() + " " + direction;
+        String[] directionsList = {"up", "down", "right", "left"};
+        int i = -1;
+        switch (direction) {
+            case UP:
+                i = 0;
+                break;
+            case DOWN:
+                i = 1;
+                break;
+            case RIGHT:
+                i = 2;
+                break;
+            case LEFT:
+                i = 3;
+                break;
+        }
+        return "Move " + tile.getValue() + " " + directionsList[i];
     }
+
 }
