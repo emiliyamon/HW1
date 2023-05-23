@@ -13,14 +13,14 @@ public class State {
 
     public boolean isGoal() {
         int correctValue = 1;
-        int maxValue = (board.getTiles().length * board.getTiles()[0].length) - 1;
+        int maxValue = (board.getTiles().length * board.getTiles()[0].length) - 1;//1*2=2-1=  1
 
-        for (int i = 0; i < board.getTiles().length; i++) {
-            for (int j = 0; j < board.getTiles()[0].length; j++) {
-                if (i == (board.getTiles().length - 1) && j == (board.getTiles()[0].length-1)) {
+        for (int i = 0; i < board.getTiles().length; i++) { //i=0
+            for (int j = 0; j < board.getTiles()[0].length; j++) {//j=0,1
+                if (i == (board.getTiles().length - 1) && j == (board.getTiles()[0].length-1)) {//i=0 && j=1
                     continue;
                 } else if (board.getTiles()[i][j].getValue() == correctValue) {
-                    correctValue++;
+                    correctValue++;//2
                 }
             }
         }
