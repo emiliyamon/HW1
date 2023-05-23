@@ -63,18 +63,13 @@ public class State {
 
     public State result(Action action) {
         Board newBoard = new Board(this.board);
-        int rowIndex = -1; // the problem is here
-        int colIndex = -1;
+        Tile[][] tiles = board.getTiles();
+        Tile tile = action.getTile();
+        int value = tile.getValue();
+        int[] indexList = board.findIndex(tiles, value);
 
-        for (int i = 0; i < newBoard.getTiles().length; i++) {
-            for (int j = 0; j < newBoard.getTiles()[0].length; j++) {
-                if (newBoard.getTiles()[i][j].getValue() == action.getTile().getValue()) {
-                    rowIndex = i;
-                    colIndex = j;
-                    break;
-                }
-            }
-        }
+        int rowIndex = indexList[0];
+        int colIndex = indexList[1];
 
         int newRow = rowIndex;
         int newCol = colIndex;
