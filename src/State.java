@@ -11,28 +11,37 @@ public class State {
         return board;
     }
 
+    /**
+     * checking if all tiles are in goal place.
+     *
+      * @return true if all tiles are in goal place, false otherwise.
+     */
     public boolean isGoal() {
         int correctValue = 1;
-        int maxValue = (board.getTiles().length * board.getTiles()[0].length) - 1;//1*2=2-1=  1
+        int maxValue = (board.getTiles().length * board.getTiles()[0].length) - 1;
 
-        for (int i = 0; i < board.getTiles().length; i++) { //i=0
-            for (int j = 0; j < board.getTiles()[0].length; j++) {//j=0,1
-                if (i == (board.getTiles().length - 1) && j == (board.getTiles()[0].length-1)) {//i=0 && j=1
+        for (int i = 0; i < board.getTiles().length; i++) {
+            for (int j = 0; j < board.getTiles()[0].length; j++) {
+                if (i == (board.getTiles().length - 1) && j == (board.getTiles()[0].length-1)) {
                     continue;
                 } else if (board.getTiles()[i][j].getValue() == correctValue) {
-                    correctValue++;//2
+                    correctValue++;
                 }
             }
         }
         return  (correctValue - 1 == maxValue);
     }
 
-
+    /**
+     * Making an Action array of actions, for each tile, using new array: [tile value][can/can't move]. Each row references to different direction this order: up, down, right, left.
+     *
+     * @return Action array includes the possible action for each tile to move.
+     */
     public Action[] actions() {
         // get index of space
         int[] spaceIndex = board.findSpace(board);
-        int spaceRowIndex = spaceIndex[0]; //0
-        int spaceColIndex = spaceIndex[1];  //0
+        int spaceRowIndex = spaceIndex[0];
+        int spaceColIndex = spaceIndex[1];
 
         int firstRow = 0;
         int maxRow = board.getTiles().length - 1;
@@ -108,7 +117,11 @@ public class State {
         return actions;
     }
 
-
+    /**
+     * Conducting the action to the last board, and making new board and state.
+     * @param action the action conducts to the tiles.
+     * @return new state made out of action on the previous board.
+     */
     public State result(Action action) {
         Tile[][] tiles = board.getTiles();
         Tile tile = action.getTile();
