@@ -14,7 +14,7 @@ public class State {
     /**
      * checking if all tiles are in goal place.
      *
-      * @return true if all tiles are in goal place, false otherwise.
+     * @return true if all tiles are in goal place, false otherwise.
      */
     public boolean isGoal() {
         int correctValue = 1;
